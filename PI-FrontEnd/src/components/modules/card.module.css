@@ -1,0 +1,154 @@
+.recomendations_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  margin: auto;
+  margin-bottom: 5rem;
+}
+
+.card {
+  width: 35rem;
+  min-width: 25rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f5f3f4;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
+  justify-content: space-evenly;
+  margin: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.card:hover {
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
+  transform: translateY(-3%);
+}
+
+.img_container{
+  padding: 1rem;
+}
+
+.card img {
+  width: 100%;
+  height: 20rem;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.h1 {
+  font-size: 2rem;
+  height: 2.5rem;
+  margin-left: 1.5rem;
+  margin-top: 2rem;
+  color: #161a1d;
+}
+
+.listCard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.category {
+  font-size: 1.5rem;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  color: #a4161a;
+}
+
+.p {
+  line-height: 1.5;
+  margin-left: 1.5rem;
+  margin-top: 1.5rem;
+  margin-right: 1.5rem;
+  margin-bottom: 2rem;
+  color: #161a1d;
+  text-align: justify;
+}
+
+
+
+.h3 {
+  font-weight: 300;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  width: 20rem;
+  height: 4rem;
+  padding: 1rem;
+  margin: 2rem auto;
+  color: #f5f3f4;
+  border: 1px, solid, #a4161a;
+  border-radius: 4px;
+  transition: all 400ms ease;
+  background-color: #a4161a;
+}
+
+.card a:hover {
+  background: #b1a7a6;
+  color: #a4161a;
+}
+
+.div {
+  background: #f5f3f4;
+  justify-content: space-between;
+  padding-bottom: 4rem;
+}
+
+.nameList {
+  background: rgb(164,22,26);
+  background: linear-gradient(90deg, rgba(164,22,26,1) 0%, rgba(211,211,211,0.8603816526610644) 100%);
+  padding: 1rem;
+  color: var(--bg-color-secundary);
+  font-size: var(--subtitle);
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+@media (max-width: 76.8rem) {
+  .recomendations_container{
+    width: 100vw;
+  }
+
+  .listCard {
+    gap: 0.5rem;
+    width: 90vw;
+  }
+}
+
+
+@media (max-width: 450px) {
+
+}
+
+
+/*.body{
+  width: 100%;
+  height: 100vh;
+  display: flex justify;
+  justify-content: center;
+  align-items: center;
+  background-color: #D3D3D3;
+}*/
+
+/*.container{
+    width: 100%;
+    display: flex;
+    border: 3px solid;
+   
+  }*/

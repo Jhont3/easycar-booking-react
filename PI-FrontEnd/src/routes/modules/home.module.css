@@ -1,0 +1,13 @@
+.home {
+  display: flex;
+  background-color: var(--primary_color);
+  color: aqua;
+}
+
+.title {
+  font-size: var(--title);
+}
+
+.titleVar {
+  color: aqua;
+}

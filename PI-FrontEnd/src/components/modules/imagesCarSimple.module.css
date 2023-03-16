@@ -1,0 +1,19 @@
+
+.card{
+    color: var(--color-font-secundary);
+    background-color: var(--bg-color-primary);
+    border-radius: 0.8rem;
+    border:solid 0.1rem var(--bg-color-primary);
+    box-shadow: 1rem;
+    text-decoration: none;
+    color: inherit;
+    width: 100vw;
+  }
+
+  .img_categories {
+    border-radius: 0.8rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100%;
+  }
+  

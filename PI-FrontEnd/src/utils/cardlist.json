@@ -1,0 +1,51 @@
+
+{
+  "cardlist" : [
+    { "id": "1", "image": "https://www.motor.com.co/__export/1650391913688/sites/motor/img/2022/04/19/chevrolet_joy.jpeg_1282495339.jpeg", 
+    "category": "Standard",
+    "title": "Chevrolet Joy sedán",
+    "city": "Medellín",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
+    
+    { "id": "2", "image": "https://cdn.impel.io/swipetospin-viewers/brunofritsh/cwjg-40/20230104130724.RCX38RLP/ec/0-0.jpg", 
+    "category": "Sport",
+    "title": "Nissan",
+    "city": "Medellín",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
+
+    { "id": "3", "image": "https://images.ctfassets.net/9uvyuvuqoc80/4keIDb6glPC6eYmAoqNICk/28747b78a348064f421ffe8574201a64/Suzuki_Vitara__3_.jpg?w=1440", 
+    "category": "SUV",
+    "title": "Suzuki Vitara",
+    "city": "Medellín",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
+
+    { "id": "4", "image": "https://www.coches.com/fotos_historicas/audi/A6/936d3b222d201b3590833c2d7b8d384a.jpg", 
+    "category": "Premium",
+    "title": "Audi",
+    "city": "Cartagena",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
+
+    { "id": "5", "image": "https://img.remediosdigitales.com/7b7a13/kia_picanto_01/1366_2000.jpg", 
+    "category": "Standard",
+    "title": "Kia Picanto",
+    "city": "Barranquilla",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
+
+    { "id": "6", "image": "https://img.remediosdigitales.com/706d8c/chevrolet-corvette-2020_/1366_2000.jpg", 
+    "category": "Sport",
+    "title": "Chevrolet Corvette",
+    "city": "Medellín",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
+
+    { "id": "7", "image": "https://images.ctfassets.net/9uvyuvuqoc80/4h4zqom4BXm6UI4scuJ2Ql/50993a37ca4739d3789e2e5dd0dd1ca4/Toyota_RAV4__2_.jpg?w=1440", 
+    "category": "SUV",
+    "title": "Toyota RAV4",
+    "city": "Cartagena",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" },
+
+    { "id": "8", "image": "https://cnnespanol.cnn.com/wp-content/uploads/2016/03/160301114615-aston-martin-db11-8-crop-super-169.jpg?resize=940,530", 
+    "category": "Premium",
+    "title": "Aston Martin",
+    "city": "Medellín",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" }
+  ]}

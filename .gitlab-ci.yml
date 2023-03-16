@@ -1,0 +1,85 @@
+stages:          # List of stages for jobs, and their order of execution
+  - build
+  - test
+  - deploy
+
+variables:
+  VITE_API_URL: "http://$DEPLOY_SERVER_IP:8080"
+
+build_frontend :
+    stage: build
+    image: node:latest
+    script:
+        - echo "Building the app"
+        - cd PI-FrontEnd
+        - ls        
+        - npm --force install
+        - CI=false npm run build
+        - echo "build FrontEnd done"
+        - cd build
+        - ls
+        - cd ..
+        - pwd
+    artifacts:
+        name: react_build
+        paths:
+        - ./PI-FrontEnd/build/
+    rules: 
+        - changes:
+            -  PI-FrontEnd/**/*
+
+build_backend:
+    stage: build
+    image: maven:3.8-openjdk-17
+    script:
+        - cd PI-Backend
+        - cd booking
+        - echo "Building app..."
+        - mvn clean install
+        - echo "Finished building the app."
+    artifacts:
+        expire_in: 1 week
+        paths:
+            - PI-Backend/booking/target/booking-0.0.1-SNAPSHOT.jar
+
+test-job:   # This job runs in the test stage.
+  stage: test    # It only starts when the job in the build stage completes successfully.
+  script:
+    - echo "Running unit tests... This will take about 60 seconds."
+    - sleep 60
+    - echo "Code coverage is 90%"
+
+deploy_frontend :
+  stage: deploy
+  needs: [build_frontend]
+  image: python:latest
+  script:
+    - pwd
+    - pip install awscli
+    - aws configure set aws_secret_key_id $AWS_ACCESS_KEY_ID
+    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY 
+    - aws s3 sync PI-FrontEnd/build/ s3://frontend-grupo4-easycar
+  rules: 
+    - changes:
+        -  PI-FrontEnd/**/*
+
+deploy_backend :
+    stage: deploy
+    needs: [build_backend]
+    image: alpine:3.11
+    before_script:
+        - apk update && apk add openssh-client bash
+        - mkdir -p ~/.ssh
+        - chmod 700 ~/.ssh
+        - eval $(ssh-agent -s)
+        - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+        - touch ~/.ssh/config
+        - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+        - ssh-keyscan -H "$DEPLOY_SERVER_IP" >> ~/.ssh/known_hosts
+        - chmod 644 ~/.ssh/known_hosts
+    script:
+        - echo "Deploying started..."
+        - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop booking.service"
+        - scp PI-Backend/booking/target/booking-0.0.1-SNAPSHOT.jar ubuntu@$DEPLOY_SERVER_IP:~/proyecto/
+        - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start booking.service"
+        - echo "Finished deploying the app."

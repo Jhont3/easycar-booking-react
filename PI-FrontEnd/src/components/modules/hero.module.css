@@ -1,0 +1,139 @@
+/* ========= hero__container ========= */
+.hero__container {
+  min-height: 50vh;
+  background: url("/images/hero_backgorund.jpg") no-repeat center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem 1rem;
+}
+
+/* ========= hero_info__container ========= */
+.hero__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 5rem;
+  color: var(--primary_color);
+}
+
+.hero__text {
+  font-size: 2em;
+  text-shadow: 1px 1px 5px #020202;
+  color: #fff;
+}
+
+/* ========= hero__form ========= */
+.hero__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 75rem;
+  width: 100%;
+  padding: 0.6rem 1.5rem;
+  background-color: rgb(255, 255, 255, 0.5);
+  box-shadow: rgb(0, 0, 0, 0.9) 0 0.8rem 2.4rem;
+  border-radius: 2.5rem;
+}
+
+.hero__form label {
+  font-size: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.hero__form input,
+.hero__form select {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: #161a1d;
+}
+
+.hero__form input::placeholder,
+.hero__form select::placeholder {
+  color: #161a1d;
+}
+
+.city__selector__container {
+  display: flex;
+  flex-direction: column;
+}
+
+.city__selector__container label {
+  padding-left: 0.5rem;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+}
+
+.search_icon {
+  font-size: 3em;
+  color: #660708;
+}
+
+.error {
+  color: var(--secundary_color);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+  text-shadow: 1px 1px 10px var(--primary_color);
+}
+
+.city__selector__container .error {
+  padding-left: 0.5rem;
+}
+
+/* ========= styles for mobile screens ========= */
+@media screen and (max-width: 45.8rem) {
+  .hero__form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero__form label {
+    padding: 0.4rem 0;
+  }
+
+  .city__selector__container {
+    width: 100%;
+    border-bottom: 0.1rem solid #333;
+    padding: 0.8rem 0;
+  }
+
+  .city__selector__container label {
+    padding-left: 0.5rem;
+  }
+
+  .error {
+    padding-left: 0;
+  }
+
+  .btn {
+    width: 100%;
+    border: 0.1rem solid #333;
+    padding: 1rem 0;
+    margin: 3rem 0 1rem;
+    border-radius: 2.5rem;
+    background-color: #660708;
+    color: #fff;
+    font-size: 2rem;
+    display: inline-block;
+  }
+}

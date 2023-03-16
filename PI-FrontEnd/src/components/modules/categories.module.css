@@ -1,0 +1,103 @@
+.section_categories {
+  width: 80vw;
+  margin: 5rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.h2_categories {
+  color: var(--color-font-primary);
+  font-size: x-large;
+  font-weight: 600;
+  margin-bottom: 4rem;
+  padding: 1rem;
+}
+
+.row{
+  width: 100%;
+}
+
+.card{
+  color: var(--color-font-secundary);
+  background-color: var(--bg-color-primary);
+  border-radius: 0.8rem;
+  border:solid 0.1rem var(--bg-color-primary);
+  box-shadow: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  width: 25rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  border: solid 0.1rem var(--color-font-secundary);
+}
+
+.img_categories {
+  border-radius: 0.8rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 100%;
+}
+
+.title_card {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 500;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  padding-bottom: 0.3rem;
+  text-transform: capitalize;
+}
+
+.p_categories {
+  font-weight: 300;
+  font-size: 1.3rem;
+  text-align: left;
+  padding-left: 0.5rem;
+  padding-bottom: 0.3rem;
+}
+
+@media screen and (max-width: 1300px) {
+  .card{
+    width: 20rem;
+  }
+}
+
+@media screen and (max-width: 1228px) {
+  .section_categories {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section_categories {
+    width: 95vw;
+  }
+  .card{
+    width: 18rem;
+  }
+}
+
+@media screen and (max-width: 705px) {
+  .card{
+    width: 23rem;
+  }
+}
+
+@media screen and (max-width: 618px) {
+  .card{
+    width: 30rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .card{
+    width: 18rem;
+  }
+}

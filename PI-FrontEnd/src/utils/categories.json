@@ -1,0 +1,34 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "title": "Standard",
+      "description": "Sedan, Hatchback, Coupé,",
+      "image": "https://totalrenting.es/wp-content/uploads/2022/06/Wolkswagen-Polo.png"
+    },
+    {
+      "id": "2",
+      "title": "Sport",
+      "description": "Roadster, Targa",
+      "image": "https://totalrenting.es/wp-content/uploads/2022/06/Porsche-911.png"
+    },
+    {
+      "id": "3",
+      "title": "SUV",
+      "description": "Crossover, Pick up",
+      "image": "https://totalrenting.es/wp-content/uploads/2022/06/1711-X8-1.jpg"
+    },
+    {
+      "id": "4",
+      "title": "Premium",
+      "description": "Muscle, Supercar, Cabiolet ",
+      "image": "https://totalrenting.es/wp-content/uploads/2022/06/Mercedes-Clase-C-Cabrio.png"
+    }
+  ]
+}
+
+
+
+
+
+

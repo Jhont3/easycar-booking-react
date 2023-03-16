@@ -1,0 +1,319 @@
+.contenedor {
+  margin: 0 2.5%;
+}
+
+.back_arrow {
+  font-size: 3rem;
+  color: var(--secundary_color);
+}
+
+.back_arrow:hover {
+  cursor: pointer;
+  transform: scaleX(1.1) scaleY(1.1);
+}
+
+.sub_header_1 {
+  background: linear-gradient(
+    90deg,
+    rgba(164, 22, 26, 1) 0%,
+    rgba(211, 211, 211, 0.8603816526610644) 100%
+  );
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 2.5%;
+  color: aliceblue;
+}
+
+.sub_header_1 div :nth-child(2) {
+  font-weight: bolder;
+  font-size: var(--subtitle);
+}
+
+.sub_header_1 button {
+  border: none;
+  background: linear-gradient(
+    90deg,
+    rgb(210, 193, 193) 0%,
+    rgba(211, 211, 211, 0.8603816526610644) 100%
+  );
+}
+
+.sub_header2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  background-color: rgb(234, 231, 231);
+  padding: 0.4rem 2.5%;
+}
+
+.sub_header2 > div {
+  display: flex;
+  align-items: center;
+}
+
+.cont_icons_grid_imgs {
+  position: relative;
+}
+
+.icons_grid {
+  position: absolute;
+  left: 2rem;
+  top: 2rem;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 60px;
+  height: 30px;
+}
+
+.grid_images {
+  margin-bottom: 3.6rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  justify-self: unset;
+}
+
+.grid_images div {
+  align-self: center;
+}
+
+.grid_images div img {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.grid_images :nth-child(1) {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  align-self: center;
+}
+
+.grid_images_phone {
+  padding-bottom: 2rem;
+}
+
+.cont_car_review h3 {
+  font-size: var(--subtitle);
+  text-shadow: 1px 1px 0.5px rgb(168, 57, 60);
+}
+
+.car_subtitle h3 {
+  font-size: var(--subtitle);
+  text-shadow: 1px 1px 0.5px rgb(168, 57, 60);
+  padding: 0 0.4rem;
+}
+
+.cont_car_features {
+  padding-bottom: 2rem;
+}
+
+.cont_car_features ol {
+  display: grid;
+  grid-template-columns: auto 1px auto 1px;
+  list-style: none;
+  gap: 1rem;
+}
+
+.cont_car_features ol > li:nth-child(odd) {
+  padding: 0, 8rem;
+  font-size: 1.4rem;
+}
+
+.cont_calendars {
+  background-color: rgba(187, 180, 180, 0.3);
+  /* necesario? */
+  display: flex;
+  flex-direction: column;
+}
+
+.dates_subtitle {
+  font-size: var(--subtitle);
+  text-shadow: 1px 1px 0.5px rgb(168, 57, 60);
+  padding: 1.4rem 1rem 0rem 1rem;
+}
+
+.cont_reserve_calendar {
+  margin: 1.4rem;
+}
+
+.cont_reserve_calendar button {
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  color: var(--bg-color-secundary);
+  background-color: var(--secundary_color);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.cont_reserve_calendar p {
+  padding: 1rem 0;
+  font-weight: 640;
+}
+
+.calendars {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 10px;
+  margin: 1.4rem;
+  padding: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.rent_tittle {
+  font-size: var(--subtitle);
+  text-shadow: 1px 1px 0.5px rgb(168, 57, 60);
+}
+
+.cont_rent_policy {
+  display: flex;
+  flex-direction: column;
+  height: 50rem;
+}
+
+.cont_rent_policy div {
+  margin-bottom: 3rem;
+}
+
+.cont_rent_policy h4 {
+  font-size: var(--text-secundary);
+}
+
+.cont_rent_policy div ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+}
+
+@media (min-width: 760px) {
+  .sub_header_1 button {
+    border: none;
+    background: linear-gradient(
+      90deg,
+      rgb(214, 209, 209) 0%,
+      rgba(211, 211, 211, 0.8603816526610644) 100%
+    );
+  }
+
+  .cont_rent_policy {
+    display: grid;
+    grid-template-columns: 33% 33%;
+    height: 30rem;
+    margin: 0 5%;
+  }
+
+  .rent_tittle {
+    margin: 0 5%;
+    padding-bottom: 1rem;
+  }
+
+  .car_subtitle h3 {
+    margin: 0 5%;
+    padding-bottom: 1rem;
+  }
+
+  .dates_subtitle {
+    margin: 0 5%;
+    padding-bottom: 1.4rem;
+  }
+
+  .calendars {
+    margin: 0 5%;
+  }
+
+  .cont_reserve_calendar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.4rem 0;
+  }
+
+  .cont_reserve_calendar button {
+    width: 50%;
+    height: 4rem;
+    margin-top: 1rem;
+  }
+
+  .cont_car_review {
+    margin: 0 5%;
+  }
+
+  .cont_reserve_calendar {
+    margin: 0 5%;
+  }
+
+  .cont_car_features ol {
+    margin: 0 5%;
+  }
+}
+
+@media (min-width: 992px) {
+  .cont_rent_policy {
+    display: grid;
+    grid-template-columns: 25% 25% 25%;
+    height: fit-content;
+    gap: 2rem;
+  }
+  .cont_car_features ol {
+    grid-template-columns: auto 1px auto 1px auto 1px auto 1px;
+  }
+
+  .grid_images {
+    margin: 0 5%;
+  }
+
+  .icons_grid {
+    position: absolute;
+    left: 10rem;
+    top: 5rem;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    width: 60px;
+    height: 30px;
+  }
+
+  .dates_subtitle {
+    padding-bottom: 0;
+  }
+
+  .cont_regist_calends {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .cont_regist_calends p {
+    margin-bottom: 1rem;
+  }
+
+  .calendars {
+    margin: 2rem;
+    gap: 5%;
+  }
+
+  .cont_reserve_calendar {
+    background-color: #fff;
+    margin: 2rem;
+    height: 40%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+
+  .cont_reserve_calendar button {
+    width: 100%;
+  }
+
+  @media (min-width: 1500px) {
+    .cont_regist_calends {
+      margin: 1% 5%;
+      justify-content: space-around;
+    }
+  }
+}

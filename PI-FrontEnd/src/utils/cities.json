@@ -1,0 +1,134 @@
+[
+  {
+    "id": 0,
+    "name": "Choose a city"
+  },
+  {
+    "id": 1,
+    "name": "Arauca"
+  },
+  {
+    "id": 2,
+    "name": "Armenia"
+  },
+  {
+    "id": 3,
+    "name": "Barranquilla"
+  },
+  {
+    "id": 4,
+    "name": "Bogotá"
+  },
+  {
+    "id": 5,
+    "name": "Bucaramanga"
+  },
+  {
+    "id": 6,
+    "name": "Cali"
+  },
+  {
+    "id": 7,
+    "name": "Cartagena"
+  },
+  {
+    "id": 8,
+    "name": "Cúcuta"
+  },
+  {
+    "id": 9,
+    "name": "Florencia"
+  },
+  {
+    "id": 10,
+    "name": "Ibagué"
+  },
+  {
+    "id": 11,
+    "name": "Leticia"
+  },
+  {
+    "id": 12,
+    "name": "Manizales"
+  },
+  {
+    "id": 13,
+    "name": "Medellín"
+  },
+  {
+    "id": 14,
+    "name": "Mitú"
+  },
+  {
+    "id": 15,
+    "name": "Mocoa"
+  },
+  {
+    "id": 16,
+    "name": "Montería"
+  },
+  {
+    "id": 17,
+    "name": "Neiva"
+  },
+  {
+    "id": 18,
+    "name": "Pasto"
+  },
+  {
+    "id": 19,
+    "name": "Pereira"
+  },
+  {
+    "id": 20,
+    "name": "Popayán"
+  },
+  {
+    "id": 21,
+    "name": "Puerto Carreño"
+  },
+  {
+    "id": 22,
+    "name": "Puerto Inírida"
+  },
+  {
+    "id": 23,
+    "name": "Quibdó"
+  },
+  {
+    "id": 24,
+    "name": "Riohacha"
+  },
+  {
+    "id": 25,
+    "name": "San Andrés"
+  },
+  {
+    "id": 26,
+    "name": "San José del Guaviare"
+  },
+  {
+    "id": 27,
+    "name": "Santa Marta"
+  },
+  {
+    "id": 28,
+    "name": "Sincelejo"
+  },
+  {
+    "id": 29,
+    "name": "Tunja"
+  },
+  {
+    "id": 30,
+    "name": "Valledupar"
+  },
+  {
+    "id": 31,
+    "name": "Villavicencio"
+  },
+  {
+    "id": 32,
+    "name": "Yopal"
+  }
+]
