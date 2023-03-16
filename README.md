@@ -6,6 +6,17 @@ Links to Web APP [EasyCar](http://easycar.ddnsking.com/) or [alternative link](h
 
 ## Instructions
 
+### Backend: 
+
+Open pom.xml file as a Project in the folder PI-Backend/booking, I recomend Intellij IDEA Java IDE
+
+Verify if you already run sql script with Database easycar.sql in rute PI-Backend/booking/BBDD using MySQL Workbench or you could use H2 as a option to test it.
+
+Wait until maven update dependencies, verified that you have MySQL workbench and put your password in file
+application.properties in rute PI-Backend/booking/src/main/resources/
+
+run 'BookingAplication.java'
+
 ### Front-end:
 
 Create a folder
@@ -19,13 +30,9 @@ npm i
 ```
 remember create a .env file equal to .env.template's information in PI-FrontEnd folder
 
-### Backend: 
-open pom.xml file as a Project in the folder PI-Backend/booking, I recomend Intellij IDEA Java IDE
-
-Wait while maven update dependencies, verified that you have MySQL workbench and put your password in file
-application.properties in rute PI-Backend/booking/src/main/resources/
-
-Verify if you already run sql script with Database easycar.sql in rute PI-Backend/booking/BBDD using MySQL Workbench or you could use H2 as a option to test it.
+```bash
+npm run dev
+```
 
 ## Project status
 
