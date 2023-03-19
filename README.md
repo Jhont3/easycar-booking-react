@@ -1,13 +1,26 @@
 ![Home](/images/demoHome.png)
 # EasyCar Booking
 
-- [ ] Here I give you the links to Web APP [EasyCar](http://frontend-grupo4-easycar.s3-website.us-east-2.amazonaws.com/) or [alternative link](http://easycar.ddnsking.com/)
+Links to Web APP [EasyCar](http://easycar.ddnsking.com/) or [alternative link](http://frontend-grupo4-easycar.s3-website.us-east-2.amazonaws.com/)
 
 🚀 This is my final project as a student of Digital House in the first track of Certified Tech Developer. I was principal responsible in  development of the Front-end (React-JS, CSS modules) and Infrastructure (Gitlab/CICD-AWS), while also contributing actively to testing (Manual testing-Selenium IDE) and backend development (Java-JWT-Spring). We used Scrum as iterative metodology to work and Figma as base to create frontend layout. To see all the libraries that we used, you can see dependencies in package.json file for Front-end and dependencies in pom.xml file for backend. 
 
 ## Instructions
 
--Front-end: Create a folder
+### Backend: 
+
+Open pom.xml file as a Project in the folder PI-Backend/booking, I recomend Intellij IDEA Java IDE
+
+Verify if you already run sql script with Database easycar.sql in rute PI-Backend/booking/BBDD using MySQL Workbench or you could use H2 as a option to test it.
+
+Wait until maven update dependencies, verified that you have MySQL workbench and put your password in file
+application.properties in rute PI-Backend/booking/src/main/resources/
+
+run 'BookingAplication.java'
+
+### Front-end:
+
+Create a folder
 
 ```bash
 cd <that folder's name>
@@ -16,13 +29,11 @@ cd easycar-booking-react
 cd PI-FrontEnd
 npm i
 ```
-
 remember create a .env file equal to .env.template's information in PI-FrontEnd folder
 
--Backend: open pom.xml file as a Project in the folder PI-Backend/booking, I recomend Intellij IDEA Java IDE
--Wait while maven update dependencies, verified that you have MySQL workbench and put your password in file
-application.properties in rute PI-Backend/booking/src/main/resources/
--Verify if you already run sql script with Database easycar.sql in rute PI-Backend/booking/BBDD using MySQL Workbench or you could use H2 as a option to test it.
+```bash
+npm run dev
+```
 
 ## Project status
 
