@@ -1,7 +1,9 @@
 import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { MyAnimation } from "../components/MyAnimation";
 import { LoginPageContext } from "../context/LoginPageContext";
 import styles from "./modules/loginPage.module.css";
+
 
 const initialValues = {
   email: "",
@@ -63,9 +65,16 @@ export const LoginPage = () => {
   }
 
   return (
-    <div className={styles.form_Container}>
+    <>
+          <MyAnimation/>
+
+    <div className={styles.form_Container} >
       <h3 className={styles.subtitle}>Sign in</h3>
-      {valCarDetBtnRedd && <div><h4 className={styles.error}>Please sign in to reserve a car</h4></div>}
+      {valCarDetBtnRedd && (
+        <div>
+          <h4 className={styles.error}>Please sign in to reserve a car</h4>
+        </div>
+      )}
       <form onSubmit={onSubmit} className={styles.form}>
         <div className={styles.form_control}>
           <label htmlFor="formEmail">Email</label>
@@ -108,5 +117,6 @@ export const LoginPage = () => {
         </div>
       </form>
     </div>
+    </>
   );
 };

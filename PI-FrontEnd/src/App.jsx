@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Footer, Header } from "./components";
+
 import { DataAPIContextProvider } from "./context/DataAPIContext";
 import {
   AdminPage,
@@ -9,8 +10,9 @@ import {
   PrivateRouteAdmin,
   PrivateRouteLogged,
   RegisterPage,
+  Booking,
 } from "./routes";
-import { Booking } from "./routes/Booking";
+
 
 export const App = () => {
   return (

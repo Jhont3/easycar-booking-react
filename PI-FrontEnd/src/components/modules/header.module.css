@@ -7,11 +7,11 @@
   padding: 2rem;
 }
 
-.menu_icon{
-    display: none;
-    height: 4.5rem;
-    width: auto;
-    color: #a4161a;
+.menu_icon {
+  display: none;
+  height: 4.5rem;
+  width: auto;
+  color: #a4161a;
 }
 
 .container_logo {
@@ -21,12 +21,16 @@
   padding: auto;
 }
 
-.logo{
-border-radius: 2.5rem;
-margin: 0%;
-padding: 0%;
-height: 100%;
-width: 75%;
+.container_logo :hover {
+  transform: scaleX(1.02) scaleY(1.02);
+}
+
+.logo {
+  border-radius: 2.5rem;
+  margin: 0%;
+  padding: 0%;
+  height: 100%;
+  width: 75%;
 }
 
 .container_buttons {
@@ -62,6 +66,7 @@ width: 75%;
   line-height: 42px;
   padding: 0;
   border: none;
+  border-radius: 10px;
 }
 
 .btn span {
@@ -94,6 +99,7 @@ width: 75%;
 .btn:hover {
   background: #a4161a;
   box-shadow: none;
+  border-radius: 14px;
 }
 
 .btn:hover:before {
@@ -136,18 +142,18 @@ width: 75%;
   width: 100%;
 }
 
-.container_icon{
-    display: none;
+.container_icon {
+  display: none;
 }
 
-.login{
+.login {
   display: flex;
   gap: 1rem;
   justify-content: center;
   align-items: center;
 }
 
-.welcome{
+.welcome {
   /* border: 1px solid blue; */
   display: flex;
   justify-content: center;
@@ -155,7 +161,7 @@ width: 75%;
   gap: 1rem;
 }
 
-.login span{
+.login span {
   background-color: #a4161a;
   color: #f5f3f4;
   border-radius: 100%;
@@ -167,38 +173,37 @@ width: 75%;
   font-weight: bold;
 }
 
-.link{
+.link {
   text-decoration: none;
   border-radius: 2.5rem;
   text-align: center;
-  padding: .1rem 2rem;
+  padding: 0.1rem 2rem;
   align-self: center;
   border: 1px solid #a4161a;
 }
 
-.link:hover{
+.link:hover {
   background-color: #a4161a;
   color: #f5f3f4;
   font-weight: 600;
-  padding: .5rem 2rem;
+  padding: 0.5rem 2rem;
 }
 
-@media screen and (max-width: 45.8rem){
-    .container_header{
-      justify-content: space-between;
-    }
-    
-    .container_icon{
-        display: block;
-        padding: 1rem;
-    }
+@media screen and (max-width: 45.8rem) {
+  .container_header {
+    justify-content: space-between;
+  }
 
-    .menu_icon{
+  .container_icon {
     display: block;
-    }
+    padding: 1rem;
+  }
 
-    .container_buttons{
-        display: none;
-    }
+  .menu_icon {
+    display: block;
+  }
 
+  .container_buttons {
+    display: none;
+  }
 }

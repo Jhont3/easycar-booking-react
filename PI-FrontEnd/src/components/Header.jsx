@@ -6,6 +6,7 @@ import { LoginPageContext } from "../context/LoginPageContext";
 import { HamburgerDropdown } from "./HamburgerDropdown";
 import { RiAdminLine } from "react-icons/ri";
 import { DataAPIContext } from "../context";
+import { MyAnimation } from "./MyAnimation";
 
 export function Header() {
   const { user, activeBtn, goToLoginPg, goToRegisterPg, convertInfoToken } =
@@ -45,7 +46,7 @@ export function Header() {
             />
           ) : undefined}
           <div className={styles.welcome}>
-            {innerWidth > 760 && <h2>Hola {user.name}</h2>}
+            {innerWidth > 760 && <h2>Hello {user.name}</h2>}
             <span>{user.name.toUpperCase().charAt(0)}</span>
           </div>
           <Link

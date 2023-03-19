@@ -1,3 +1,4 @@
+![Home](/images/demoHome.png)
 # EasyCar Booking
 
 - [ ] Here I give you the links to Web APP [EasyCar](http://frontend-grupo4-easycar.s3-website.us-east-2.amazonaws.com/) or [alternative link](http://easycar.ddnsking.com/)
