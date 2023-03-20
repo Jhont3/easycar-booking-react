@@ -8,6 +8,7 @@ const bookingApi = axios.create({
 });
 
 bookingApi.interceptors.request.use((config) => {
+  console.log(config);
   if (
     config?.method === "post" &&
     (config?.url === "/booking" || config?.url === "/cars")
@@ -18,6 +19,15 @@ bookingApi.interceptors.request.use((config) => {
     };
   }
 
+  if (
+    (config?.method === "get" && config?.url === "/booking/client/1") ||
+    config?.url === "/booking/client/2"
+  ) {
+    config.headers = {
+      ...config.headers,
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    };
+  }
   return config;
 });
 

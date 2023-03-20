@@ -6,7 +6,7 @@ export function Recomendations({
   selectedOptionCity,
   randomCars,
   listDispCarsByDates,
-  listDispCarsByDatesAndCity
+  listDispCarsByDatesAndCity,
 }) {
   return (
     <>

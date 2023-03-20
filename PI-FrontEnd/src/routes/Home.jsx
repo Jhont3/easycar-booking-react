@@ -27,7 +27,7 @@ export const Home = () => {
         selectedOptionCity={selectedOptionCity}
         randomCars={randomCars}
         listDispCarsByDates={listDispCarsByDates}
-        listDispCarsByDatesAndCity={listDispCarsByDatesAndCity}
+        listDispCarsByDatesAndCity={listDispCarsByDatesAndCity}        
       />
     </>
   );

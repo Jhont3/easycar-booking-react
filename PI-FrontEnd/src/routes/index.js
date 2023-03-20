@@ -6,4 +6,5 @@ export * from "./AdminPage";
 export * from "./PrivateRouteAdmin";
 export * from "./PrivateRouteLogged";
 export * from "./Booking";
+export * from "./MyBookings";
 

@@ -1,0 +1,86 @@
+/* Start subheader */
+.sub_header_1 {
+  background: linear-gradient(
+    90deg,
+    rgba(164, 22, 26, 1) 0%,
+    rgba(211, 211, 211, 0.8603816526610644) 100%
+  );
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 2.5%;
+  color: aliceblue;
+}
+
+.sub_header_1 p {
+  font-weight: bolder;
+  font-size: var(--subtitle);
+}
+
+.sub_header_1 button {
+  border: none;
+  background: linear-gradient(
+    90deg,
+    rgb(210, 193, 193) 0%,
+    rgba(211, 211, 211, 0.8603816526610644) 100%
+  );
+}
+
+.back_arrow {
+  font-size: 3rem;
+  color: var(--secundary_color);
+}
+
+.back_arrow:hover {
+  cursor: pointer;
+  transform: scaleX(1.1) scaleY(1.1);
+}
+/* End subheader */
+
+.reservation_subtitle{
+    padding: 2rem 1rem 1.6rem 2.5%;
+    font-size: var(--subtitle);
+    text-shadow: 0.5px 0.5px 0.5px rgb(83, 1, 4);
+    color: var(--secundary_color);
+}
+
+.subtitle_secundary {
+    font-size: var(--text-secundary);
+    color: var(--secundary_color);
+    text-shadow: 0.5px 0.5px 0.5px rgb(83, 1, 4);
+    padding: 1rem 1rem 0 1rem;
+  }
+
+.cont_reserved_cars {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.each_reservation {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+.add_button {
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    background-color: rgba(164, 22, 26, 1);
+    color: white;
+    border-radius: 0.6rem;
+    cursor: pointer;
+  }
+
+@media (min-width: 760px) {
+  .sub_header_1 button {
+    border: none;
+    background: linear-gradient(
+      90deg,
+      rgb(214, 209, 209) 0%,
+      rgba(211, 211, 211, 0.8603816526610644) 100%
+    );
+  }
+}

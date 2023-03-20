@@ -4,7 +4,6 @@ import { MyAnimation } from "../components/MyAnimation";
 import { LoginPageContext } from "../context/LoginPageContext";
 import styles from "./modules/loginPage.module.css";
 
-
 const initialValues = {
   email: "",
   password: "",
@@ -66,57 +65,56 @@ export const LoginPage = () => {
 
   return (
     <>
-          <MyAnimation/>
-
-    <div className={styles.form_Container} >
-      <h3 className={styles.subtitle}>Sign in</h3>
-      {valCarDetBtnRedd && (
-        <div>
-          <h4 className={styles.error}>Please sign in to reserve a car</h4>
-        </div>
-      )}
-      <form onSubmit={onSubmit} className={styles.form}>
-        <div className={styles.form_control}>
-          <label htmlFor="formEmail">Email</label>
-          <input
-            name="email"
-            type="email"
-            classID="formEmail"
-            onChange={onChange}
-            value={email}
-            autoComplete="on"
-          />
-        </div>
-
-        <div className={styles.form_control}>
-          <label htmlFor="formPassword">Password</label>
-          <input
-            name="password"
-            type="password"
-            classID="formPassword"
-            onChange={onChange}
-            value={password}
-            autoComplete="current-password"
-          />
-        </div>
-
-        {showErrorMessage && (
-          <span className={styles.error}>
-            Please try again, your credentials are invalid
-          </span>
+      <MyAnimation />
+      <div className={styles.form_Container}>
+        <h3 className={styles.subtitle}>Sign in</h3>
+        {valCarDetBtnRedd && (
+          <div>
+            <h4 className={styles.error}>Please sign in to reserve a car</h4>
+          </div>
         )}
+        <form onSubmit={onSubmit} className={styles.form}>
+          <div className={styles.form_control}>
+            <label htmlFor="formEmail">Email</label>
+            <input
+              name="email"
+              type="email"
+              classID="formEmail"
+              onChange={onChange}
+              value={email}
+              autoComplete="off"
+            />
+          </div>
 
-        <div className={styles.btn_container}>
-          <button type="submit" className={styles.btn}>
-            Login
-          </button>
-          <span>
-            Don't have an account yet? &nbsp;
-            <Link to="/register">Create account</Link>
-          </span>
-        </div>
-      </form>
-    </div>
+          <div className={styles.form_control}>
+            <label htmlFor="formPassword">Password</label>
+            <input
+              name="password"
+              type="password"
+              classID="formPassword"
+              onChange={onChange}
+              value={password}
+              autoComplete="off"
+            />
+          </div>
+
+          {showErrorMessage && (
+            <span className={styles.error}>
+              Please try again, your credentials are invalid
+            </span>
+          )}
+
+          <div className={styles.btn_container}>
+            <button type="submit" className={styles.btn}>
+              Login
+            </button>
+            <span>
+              Don't have an account yet? &nbsp;
+              <Link to="/register">Create account</Link>
+            </span>
+          </div>
+        </form>
+      </div>
     </>
   );
 };

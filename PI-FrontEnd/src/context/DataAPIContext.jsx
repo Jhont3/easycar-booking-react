@@ -35,15 +35,6 @@ const DataAPIContextProvider = ({ children }) => {
     getDataCars();
   }, [getDataCars]);
 
-  //TODO change fetch
-  // //Getting category information from the server for rendering in the UI.
-  // useEffect(() => {
-  //   fetch("http://localhost:8080/categories")
-  //     .then((response) => response.json())
-  //     .then((data) => setCategories(data))
-  //     .catch((error) => console.error(error));
-  // }, []);
-
   useEffect(() => {
     bookingApi
       .get("/categories")

@@ -11,8 +11,8 @@ import {
   PrivateRouteLogged,
   RegisterPage,
   Booking,
+  MyBookings,
 } from "./routes";
-
 
 export const App = () => {
   return (
@@ -28,6 +28,7 @@ export const App = () => {
             <Route path="/cars/:id" element={<CarDetail />} />
             <Route element={<PrivateRouteLogged />}>
               <Route element={<Booking />} path="/cars/:id/booking" exact />
+              <Route element={<MyBookings />} path="/booking/client/:id" exact/>
             </Route>
             <Route element={<PrivateRouteAdmin />}>
               <Route element={<AdminPage />} path="/admin" exact />

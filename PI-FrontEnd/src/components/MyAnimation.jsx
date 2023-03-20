@@ -14,7 +14,7 @@ export function MyAnimation() {
     // Animation loop
     let angle = 1;
     function animate() {
-      angle += 0.008; // Decreased the angle increment to slow down the animation
+      angle += 0.006; // Decreased the angle increment to slow down the animation
 
       // Clear canvas
       context.clearRect(0, 0, canvas.width, canvas.height);
@@ -46,7 +46,7 @@ export function MyAnimation() {
       ref={canvasRef}
       style={{
         position: "absolute",
-        opacity: 0.2,
+        opacity: 0.1,
         width: "100%",
         height: "100%",
         zIndex: -1,

@@ -5,7 +5,7 @@ import { LoginPageContext } from "../context";
 export const PrivateRouteAdmin = () => {
   const { adminLogged } = useContext(LoginPageContext);
 
-  return adminLogged || localStorage.getItem("token") ? (
+  return adminLogged || localStorage.getItem("rol") === "1" ? (
     <Outlet />
   ) : (
     <Navigate to="/login" />
