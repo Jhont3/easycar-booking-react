@@ -100,7 +100,7 @@ export const MyBookings = () => {
           ) : (
             <>
               <div className={styles.cont_checking}>
-                <p >Too many space... No bookings yet...</p> 
+                <p>Too many space... Checking info...</p>
                 <AstronautLoading />
               </div>
             </>
