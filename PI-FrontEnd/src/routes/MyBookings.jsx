@@ -1,45 +1,52 @@
-import { useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import styles from "./modules/myBookings.module.css";
 import { MdArrowBackIosNew } from "react-icons/md";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { bookingApi } from "../api";
 import { Card } from "../components";
 import Swal from "sweetalert2";
 import { AstronautLoading } from "../components/AstronautLoading";
+import { DataAPIContext } from "../context";
 
 export const MyBookings = () => {
   const { id } = useParams();
-  const [myReservations, setmyReservations] = useState([]);
-  console.log(myReservations, "myreserva");
+  const navigate = useNavigate();
+
+  const { getResevByClient, myReservations } = useContext(DataAPIContext);
 
   useEffect(() => {
-    bookingApi
-      .get("/booking/client/" + id)
-      .then((response) => {
-        setmyReservations(response.data);
-        const arrayCars = response.data.map((element) => {
-          return element.car;
-        });
-        setreservedCars(arrayCars);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    getResevByClient(id);
   }, []);
+
+  const [copyMyReservations, setcopyMyReservations] = useState([]);
+  console.log(copyMyReservations, "copy reservations");
+
+  useEffect(() => {
+    setcopyMyReservations(myReservations);
+  }, [myReservations]);
 
   const onNavigateBack = () => {
     navigate(-1);
   };
 
-  const handleDeleteBooking = async (id) => {
+  const handleDeleteBooking = async (idReserve) => {
     try {
-      await bookingApi.delete("/booking/" + id);
+      await bookingApi.delete("/booking/" + idReserve);
     } catch (error) {
       console.error(error);
     }
   };
 
-  const onDelete = () => {
+  const delCarOfView = (e) => {
+    e.preventDefault();
+    setcopyMyReservations(
+      copyMyReservations.filter(({ checkIn }) => checkIn !== e.target.value)
+    );
+  };
+
+  const onDelete = (e) => {
+    e.preventDefault();
+    localStorage.setItem("selectedBooking", e.target.id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -50,7 +57,8 @@ export const MyBookings = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        handleDeleteBooking();
+        handleDeleteBooking(e.target.id);
+        delCarOfView(e)
         Swal.fire("Deleted!", "Your booking has been deleted.", "success");
       }
     });
@@ -75,16 +83,23 @@ export const MyBookings = () => {
           <h2 className={styles.reservation_subtitle}>My reservations:</h2>
         ) : undefined}
         <div className={styles.cont_reserved_cars}>
-          {myReservations?.length > 0 ? (
-            myReservations?.map((reservation) => {
+          {copyMyReservations?.length > 0 ? (
+            copyMyReservations?.map((reservation, i) => {
               return (
                 <>
                   <div className={styles.each_reservation}>
                     <div>
                       <span className={styles.subtitle_secundary}>
-                        Reservation {reservation.id}:
+                        Reservation {i + 1}:
                       </span>
-                      <button className={styles.delete_button}>X</button>
+                      <button
+                        className={styles.delete_button}
+                        value={reservation?.checkIn}
+                        onClick={(e) => onDelete(e)}
+                        id={reservation?.id}
+                      >
+                        X
+                      </button>
                       &nbsp;
                       <button className={styles.info_button}>i</button>
                       <div className={styles.range_date_text}>

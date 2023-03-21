@@ -47,15 +47,16 @@ const DataAPIContextProvider = ({ children }) => {
   }, []);
 
   function listOfCarsWithImages(id) {
-    bookingApi.get('/cars/category/' + id)
+    bookingApi
+      .get("/cars/category/" + id)
       .then((response) => {
         const data = response.data;
-  
+
         async function getImagesByCarId(CarId) {
-          const response = await bookingApi.get('/images/car/' + CarId);
+          const response = await bookingApi.get("/images/car/" + CarId);
           return response.data;
         }
-  
+
         async function main() {
           for (const car of data) {
             const listOfCarImages = await getImagesByCarId(car.id);
@@ -63,11 +64,11 @@ const DataAPIContextProvider = ({ children }) => {
           }
           setListOfCarsByCategoryId(data);
         }
-  
+
         main();
       })
       .catch((error) => {
-        console.error('Error:', error);
+        console.error("Error:", error);
       });
   }
 
@@ -87,7 +88,6 @@ const DataAPIContextProvider = ({ children }) => {
     "",
     new DateObject()
   );
-
 
   const [listDispCarsByDates, setlistDispCarsByDates] = useState(undefined);
 
@@ -145,6 +145,21 @@ const DataAPIContextProvider = ({ children }) => {
     </>
   );
 
+  const [myReservations, setmyReservations] = useState([]);
+  console.log(myReservations, "myreserva dataapi");
+
+  const getResevByClient = (id) => {
+    bookingApi
+      .get("/booking/client/" + id)
+      .then((response) => {
+        setmyReservations(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+
   return (
     <DataAPIContext.Provider
       value={{
@@ -169,7 +184,9 @@ const DataAPIContextProvider = ({ children }) => {
         setvalueAdaptCalendar,
         textWithLineBreaksLi,
         getDataBookings,
-        bookingByCar
+        bookingByCar,
+        getResevByClient,
+        myReservations
       }}
     >
       {children}

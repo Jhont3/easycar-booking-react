@@ -3,16 +3,16 @@ import React from "react";
 export const AstronautLoading = () => {
   return (
     <>
-      <div class="astronaut" data-js="astro">
-        <div class="head"></div>
-        <div class="arm arm-left"></div>
-        <div class="arm arm-right"></div>
-        <div class="body">
-          <div class="panel"></div>
+      <div className="astronaut" data-js="astro">
+        <div className="head"></div>
+        <div className="arm arm-left"></div>
+        <div className="arm arm-right"></div>
+        <div className="body">
+          <div className="panel"></div>
         </div>
-        <div class="leg leg-left"></div>
-        <div class="leg leg-right"></div>
-        <div class="schoolbag"></div>
+        <div className="leg leg-left"></div>
+        <div className="leg leg-right"></div>
+        <div className="schoolbag"></div>
       </div>
     </>
   );
