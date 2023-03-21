@@ -18,7 +18,6 @@ const DataAPIContextProvider = ({ children }) => {
 
   const [selectedOptionCity, setselectedOptionCity] = useState([]);
 
-
   const [randomCars, setrandomCars] = useState([]);
 
   const getDataCars = useCallback(async () => {

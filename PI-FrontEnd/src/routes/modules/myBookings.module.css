@@ -36,23 +36,23 @@
 }
 /* End subheader */
 
-.reservation_subtitle{
-    padding: 2rem 1rem 1.6rem 2.5%;
-    font-size: var(--subtitle);
-    text-shadow: 0.5px 0.5px 0.5px rgb(83, 1, 4);
-    color: var(--secundary_color);
+.reservation_subtitle {
+  padding: 2rem 1rem 1.6rem 2.5%;
+  font-size: var(--subtitle);
+  text-shadow: 0.5px 0.5px 0.5px rgb(83, 1, 4);
+  color: var(--secundary_color);
 }
 
 .subtitle_secundary {
-    font-size: var(--text-secundary);
-    color: var(--secundary_color);
-    text-shadow: 0.5px 0.5px 0.5px rgb(83, 1, 4);
-    padding: 1rem 1rem 0 1rem;
-  }
+  font-size: var(--text-secundary);
+  color: var(--secundary_color);
+  text-shadow: 0.5px 0.5px 0.5px rgb(83, 1, 4);
+  padding: 1rem 1rem 0 1rem;
+}
 
 .cont_reserved_cars {
   display: flex;
-  gap: 1rem;
+  gap: 1.6rem;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
@@ -60,19 +60,61 @@
 .each_reservation {
   display: flex;
   flex-direction: column;
-  margin: 1rem;
   border-radius: 1rem;
 }
 
-.add_button {
-    width: 3rem;
-    height: 3rem;
-    border: none;
-    background-color: rgba(164, 22, 26, 1);
-    color: white;
-    border-radius: 0.6rem;
-    cursor: pointer;
-  }
+.delete_button {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  background-color: rgba(164, 22, 26, 1);
+  color: #fff;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.delete_button:hover {
+  transform: scaleX(1.08) scaleY(1.08);
+  color: var(--bg-color-secundary);
+}
+
+.info_button {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  background-color: var(--bg-color-primary);
+  color: white;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.info_button:hover{
+  transform: scaleX(1.08) scaleY(1.08);
+  color: var(--bg-color-secundary);
+}
+
+.range_date_text{
+  padding: 0.4rem 2.5%;
+}
+
+.cont_checking{
+  background-color: var(--bg-color-primary);
+  background-image: url('/images/constellation.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  image-orientation: 180deg;
+  height: 76vh;
+  width: 100vw;
+}
+
+.cont_checking p{
+  color: #fff;
+padding: 1rem;
+font-size: large;
+text-align: center;
+font-weight: bold;
+}
+
 
 @media (min-width: 760px) {
   .sub_header_1 button {

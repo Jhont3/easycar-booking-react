@@ -4,13 +4,13 @@ import { MdArrowBackIosNew } from "react-icons/md";
 import { useParams } from "react-router-dom";
 import { bookingApi } from "../api";
 import { Card } from "../components";
+import Swal from "sweetalert2";
+import { AstronautLoading } from "../components/AstronautLoading";
 
 export const MyBookings = () => {
   const { id } = useParams();
   const [myReservations, setmyReservations] = useState([]);
-  const [reservedCars, setreservedCars] = useState(undefined);
   console.log(myReservations, "myreserva");
-  console.log(reservedCars, "mycars");
 
   useEffect(() => {
     bookingApi
@@ -31,6 +31,31 @@ export const MyBookings = () => {
     navigate(-1);
   };
 
+  const handleDeleteBooking = async (id) => {
+    try {
+      await bookingApi.delete("/booking/" + id);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const onDelete = () => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        handleDeleteBooking();
+        Swal.fire("Deleted!", "Your booking has been deleted.", "success");
+      }
+    });
+  };
+
   return (
     <>
       <section>
@@ -46,23 +71,40 @@ export const MyBookings = () => {
             <MdArrowBackIosNew className={styles.back_arrow} />
           </button>
         </header>
-        <h2 className={styles.reservation_subtitle}>My reservations:</h2>
+        {myReservations?.length > 0 ? (
+          <h2 className={styles.reservation_subtitle}>My reservations:</h2>
+        ) : undefined}
         <div className={styles.cont_reserved_cars}>
-          {reservedCars?.map((car) => (
+          {myReservations?.length > 0 ? (
+            myReservations?.map((reservation) => {
+              return (
+                <>
+                  <div className={styles.each_reservation}>
+                    <div>
+                      <span className={styles.subtitle_secundary}>
+                        Reservation {reservation.id}:
+                      </span>
+                      <button className={styles.delete_button}>X</button>
+                      &nbsp;
+                      <button className={styles.info_button}>i</button>
+                      <div className={styles.range_date_text}>
+                        Date range: {reservation.checkIn} -{" "}
+                        {reservation.checkOut}
+                      </div>
+                    </div>
+                    <Card car={reservation.car} key={reservation.car.id} />
+                  </div>
+                </>
+              );
+            })
+          ) : (
             <>
-              <div className={styles.each_reservation}>
-                <div>
-                  <span className={styles.subtitle_secundary}>
-                    Reservation:
-                  </span>
-                  <button className={styles.add_button}>X</button>
-                  &nbsp;
-                  <button className={styles.add_button}>i</button>
-                </div>
-                <Card car={car} key={car.id} />
+              <div className={styles.cont_checking}>
+                <p >Too many space... No bookings yet...</p> 
+                <AstronautLoading />
               </div>
             </>
-          ))}
+          )}
         </div>
       </section>
     </>

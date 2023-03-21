@@ -6,7 +6,6 @@ import { LoginPageContext } from "../context/LoginPageContext";
 import { HamburgerDropdown } from "./HamburgerDropdown";
 import { RiAdminLine } from "react-icons/ri";
 import { DataAPIContext } from "../context";
-import { MyAnimation } from "./MyAnimation";
 
 export function Header() {
   const { user, activeBtn, goToLoginPg, goToRegisterPg, convertInfoToken } =
@@ -30,6 +29,13 @@ export function Header() {
 
   const navigate = useNavigate();
 
+  const onClickUser = () => {
+    if(localStorage.getItem("token")){
+      let uid = localStorage.getItem("uid")
+      navigate(`/booking/client/`+ uid)
+    }
+  }
+
   return (
     <div className={`${styles.container_header}`}>
       <div>
@@ -47,7 +53,7 @@ export function Header() {
           ) : undefined}
           <div className={styles.welcome}>
             {innerWidth > 760 && <h2>Hello {user.name}</h2>}
-            <span>{user.name.toUpperCase().charAt(0)}</span>
+            <span onClick={onClickUser}>{user.name.toUpperCase().charAt(0)}</span>
           </div>
           <Link
             className={styles.link}
