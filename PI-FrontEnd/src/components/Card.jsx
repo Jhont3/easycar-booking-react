@@ -9,6 +9,7 @@ export function Card({
   itemRand,
   selectedCarDisp,
   selectedCarDispByCity,
+  carReserved,
 }) {
   const [oneCarByCity, setOneCarByCity] = useState(undefined);
 
@@ -17,7 +18,7 @@ export function Card({
     setrandomCars,
     setselectedOptionCity,
     setlistDispCarsByDates,
-    setlistDispCarsByDatesAndCity
+    setlistDispCarsByDatesAndCity,
   } = useContext(DataAPIContext);
 
   useEffect(() => {
@@ -192,6 +193,34 @@ export function Card({
                 : undefined}
             </p>
             <Link to={`/cars/${car.id}`} className={styles.a}>
+              Details
+            </Link>
+          </div>
+        </article>
+      ) : undefined}
+
+      {carReserved ? (
+        <article className={styles.card}>
+          <div className={styles.img_container}>
+            <img src={carReserved.images[0].url} alt="Not Found" />
+          </div>
+          <div className={styles.card_info}>
+            <h1 className={styles.h1}>{carReserved?.title}</h1>
+            <span className={styles.category}>
+              {carReserved?.category.title}
+            </span>
+            <h3 className={styles.h3}>{carReserved.city.name}</h3>
+            <p className={styles.p}>
+              {carReserved
+                ? textWithLineBreaks(
+                    carReserved.description.substring(
+                      0,
+                      carReserved.description.indexOf(".")
+                    )
+                  )
+                : undefined}
+            </p>
+            <Link to={`/cars/${carReserved.id}`} className={styles.a}>
               Details
             </Link>
           </div>

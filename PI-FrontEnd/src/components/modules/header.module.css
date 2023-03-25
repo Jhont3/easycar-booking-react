@@ -154,11 +154,14 @@
 }
 
 .welcome {
-  /* border: 1px solid blue; */
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
+}
+
+.welcome span:hover{
+  transform: scaleX(1.06) scaleY(1.06);
 }
 
 .login span {

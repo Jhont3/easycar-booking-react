@@ -33,8 +33,14 @@ export const Booking = () => {
 
   const { user, setactiveBtn, activeBtn, convertInfoToken, handleBooking } =
     useContext(LoginPageContext);
-  const { innerWidth, valueAdaptCalendar, textWithLineBreaksLi, getDataBookings, bookingByCar } =
-    useContext(DataAPIContext);
+  const {
+    innerWidth,
+    valueAdaptCalendar,
+    setvalueAdaptCalendar,
+    textWithLineBreaksLi,
+    getDataBookings,
+    bookingByCar,
+  } = useContext(DataAPIContext);
 
   const convertInfoUser = useCallback(() => {
     localStorage.getItem("token") && convertInfoToken();
@@ -130,7 +136,7 @@ export const Booking = () => {
   };
 
   const onResetForm = () => {
-    setformValues(initialValues);
+    setvalueAdaptCalendar("");
   };
 
   function onSubmit(event) {
@@ -159,6 +165,7 @@ export const Booking = () => {
           handleBookingfailure();
           return;
         }
+        onResetForm();
         handleBookingSuccess();
       })
       .catch((error) => {
@@ -180,7 +187,7 @@ export const Booking = () => {
             <p>{detailInfo.title}</p>
           </div>
         ) : undefined}
-        <button onClick={onNavigateBack} >
+        <button onClick={onNavigateBack}>
           <MdArrowBackIosNew className={styles.back_arrow} />
         </button>
       </header>
@@ -244,8 +251,18 @@ export const Booking = () => {
         <article className={styles.second_grid_area}>
           <h3 className={styles.title_booking}>Select the reservation date</h3>
           <div className={styles.cont_calendar}>
-            {innerWidth > 732 && <AdaptableCalendar numberOfMonths={2} reservations={bookingByCar}/>}
-            {innerWidth < 732 && <AdaptableCalendar numberOfMonths={1} reservations={bookingByCar}/>}
+            {innerWidth > 732 && (
+              <AdaptableCalendar
+                numberOfMonths={2}
+                reservations={bookingByCar}
+              />
+            )}
+            {innerWidth < 732 && (
+              <AdaptableCalendar
+                numberOfMonths={1}
+                reservations={bookingByCar}
+              />
+            )}
           </div>
         </article>
 
@@ -254,7 +271,8 @@ export const Booking = () => {
           <form className={styles.form_booking_hour}>
             <p>
               <MdCheckCircleOutline style={{ fontSize: 24, color: "green" }} />
-              &nbsp;Your car will be ready for check in at {selectedOption} hours
+              &nbsp;Your car will be ready for check in at {selectedOption}{" "}
+              hours
             </p>
             <label htmlFor="OptionsTime">
               Indicate your estimated arrival time

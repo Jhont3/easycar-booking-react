@@ -107,7 +107,7 @@ export const MyBookings = () => {
                         {reservation.checkOut}
                       </div>
                     </div>
-                    <Card car={reservation.car} key={reservation.car.id} />
+                    <Card carReserved={reservation.car} key={reservation.car.id} />
                   </div>
                 </>
               );
