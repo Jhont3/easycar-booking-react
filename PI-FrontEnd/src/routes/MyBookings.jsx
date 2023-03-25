@@ -19,7 +19,6 @@ export const MyBookings = () => {
   }, []);
 
   const [copyMyReservations, setcopyMyReservations] = useState([]);
-  console.log(copyMyReservations, "copy reservations");
 
   useEffect(() => {
     setcopyMyReservations(myReservations);

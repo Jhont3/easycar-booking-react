@@ -146,7 +146,6 @@ const DataAPIContextProvider = ({ children }) => {
   );
 
   const [myReservations, setmyReservations] = useState([]);
-  console.log(myReservations, "myreserva dataapi");
 
   const getResevByClient = (id) => {
     bookingApi
