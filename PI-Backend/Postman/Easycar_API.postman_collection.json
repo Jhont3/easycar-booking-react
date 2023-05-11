@@ -1,0 +1,715 @@
+{
+	"info": {
+		"_postman_id": "4da1e1b0-4aca-4d6b-b996-f6324ebd7315",
+		"name": "Easycar_API",
+		"description": "Este es el CRUD de la sección categories del home. Aquí se puede crear, listar, modificar y eliminar una categoria.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23249498"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "create-category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"category return validation\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.title).to.equal(\"Premium\");\r",
+									"    pm.expect(jsonData.description).to.equal(\"expensive\");\r",
+									"    pm.expect(jsonData.url).to.equal(\"car.com\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"title\":\"Premium\",\r\n\"description\":\"expensive\",\r\n\"url\":\"car.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Car}} ",
+							"host": [
+								"{{URL}}{{Car}} "
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories-list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Array validation\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var lastposition = jsonData.length-1;\r",
+									"    pm.expect(jsonData[lastposition].title).to.equal(\"Premium\");\r",
+									"    pm.expect(jsonData[lastposition].description).to.equal(\"expensive\");\r",
+									"    pm.expect(jsonData[lastposition].url).to.equal(\"car.com\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Category}}",
+							"host": [
+								"{{URL}}{{Category}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Update validation\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Category with id = 6 updated successfully\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\"id\": \"6\",    \r\n\"title\": \"Premium\",\r\n\"description\": \"expensive\",\r\n\"url\": \"car.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Category}}",
+							"host": [
+								"{{URL}}{{Category}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-category",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"delete validation\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Category with id 5 deleted successfully\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}{{Category}}/5",
+							"host": [
+								"{{URL}}{{Category}}"
+							],
+							"path": [
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"response_body_string\");",
+							"});",
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+							"});"
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Cars",
+			"item": [
+				{
+					"name": "add-car",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"car return validation\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.title).to.equal(\"Toyota Land Cruiser\");\r",
+									"    pm.expect(jsonData.description).to.equal(\"Great permformance\");\r",
+									"    pm.expect(jsonData.categories_id).to.equal(3);\r",
+									"    pm.expect(jsonData.cities_id).to.equal(2);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"title\":\"Toyota Land Cruiser\",\r\n\"description\":\"Great permformance\",\r\n\"categories_id\":\"3\",\r\n\"cities_id\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Car}}",
+							"host": [
+								"{{URL}}{{Car}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "car",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"car return validation\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.title).to.equal(\"Toyota Land Cruiser\");\r",
+									"    pm.expect(jsonData.description).to.equal(\"Great permformance\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Car}}/21",
+							"host": [
+								"{{URL}}{{Car}}"
+							],
+							"path": [
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cars-list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Array validation\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    var lastposition = jsonData.length-1;\r",
+									"    pm.expect(jsonData[lastposition].title).to.equal(\"Toyota Land Cruiser\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Car}}",
+							"host": [
+								"{{URL}}{{Car}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-car",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Update validation\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"The car with id: 21, was updated\");\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\"id\":\"21\",\r\n\"title\":\"Toyota Land Cruiser\",\r\n\"description\":\"Great permformance\",\r\n\"categories_id\":\"3\",\r\n\"cities_id\":\"3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Car}}",
+							"host": [
+								"{{URL}}{{Car}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "car updated",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"car return validation\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.title).to.equal(\"Toyota Land Cruiser\");\r",
+									"    pm.expect(jsonData.description).to.equal(\"Great permformance\");\r",
+									"    pm.expect(jsonData.category.id).to.equal(3);\r",
+									"    pm.expect(jsonData.city.id).to.equal(3);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Car}}/21",
+							"host": [
+								"{{URL}}{{Car}}"
+							],
+							"path": [
+								"21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-car",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"delete validation\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Car with id 19 deleted successfully\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{Car}}/19",
+							"host": [
+								"{{URL}}{{Car}}"
+							],
+							"path": [
+								"19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "car-filter-booking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{Car}}/city2/2",
+							"host": [
+								"{{URL}}{{Car}}"
+							],
+							"path": [
+								"city2",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "add-booking",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Booking}}",
+							"host": [
+								"{{URL}}{{Booking}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "booking-list",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0M0BnbWFpbC5jb20iLCJleHAiOjE2NzY5MzQxNDQsImlhdCI6MTY3NjkzNDA4M30.7_9eR3GP8PntB7luK5BnS4PCxRPfcszzZGnjtLu4fu8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{Booking}}",
+							"host": [
+								"{{URL}}{{Booking}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "booking",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{Booking}}/",
+							"host": [
+								"{{URL}}{{Booking}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-booking",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Booking}}/",
+							"host": [
+								"{{URL}}{{Booking}}"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-booking",
+					"request": {
+						"method": "DELETE",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "add-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\":\"Johan\",\r\n\"lastName\":\"Sepulveda\",\r\n\"email\":\"test32@gmail.com\",\r\n\"password\":\"$2a$12$qtRlbH1w222aae7Gx.DyXOyjsyBs8NKAepVjOSZ4GfCVugYXp2V0G\",\r\n\"city\":\"New York\",\r\n\"role\": {\r\n\"id\":\"1\",\r\n\"name\":\"Client\"\r\n }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{User}}",
+							"host": [
+								"{{URL}}{{User}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\":\"Johan\",\r\n\"lastName\":\"Sepulveda\",\r\n\"email\":\"test3@gmail.com\",\r\n\"password\":\"$2a$12$suRkoVfKhGRvabf7V9dH6evfuQjtxziN/Uci8XauejjKsqSPB3b6m\",\r\n\"city\":\"New York\",\r\n\"role\": {\r\n        \"id\":1,\r\n        \"name\":\"Admin\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}{{Client}}",
+							"host": [
+								"{{URL}}{{Client}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{User}}",
+							"host": [
+								"{{URL}}{{User}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}{{Client}}",
+							"host": [
+								"{{URL}}{{Client}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"test3@gmail.com\",\r\n    \"password\":\"hola\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
