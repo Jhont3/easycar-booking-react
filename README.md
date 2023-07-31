@@ -3,7 +3,7 @@
 
 Links to Web APP [EasyCar](http://easycar.ddnsking.com/) or [alternative link](http://frontend-grupo4-easycar.s3-website.us-east-2.amazonaws.com/)
 
-🚀 This is my final project as a student of Digital House in the first track of Certified Tech Developer. I was principal responsible in  development of Front-end (React-JS, CSS modules) and Infrastructure (Gitlab/CICD-AWS), while also contributing actively to testing (Manual testing-Selenium IDE) and backend development (Java-JWT-Spring). We used Scrum as iterative metodology to work and Figma as base to create Front-end layout. To see all the libraries that we used, you can see dependencies in package.json file for Front-end and dependencies in pom.xml file for backend. 
+🚀 This is my final project as a student of Digital House in the first track of Certified Tech Developer. I was mainly responsible for development of Front-end (React-JS, CSS modules) and Infrastructure (Gitlab/CICD-AWS) development, while also contributing actively to testing (manual testing-Selenium IDE) and backend development (Java-JWT-Spring). We used Scrum as an iterative methodology to work and Figma as base to create Front-end layout. To see all the libraries that we used, you can see dependencies in package.json file for Front-end and dependencies in pom.xml file for backend.
 
 ## Instructions
 
